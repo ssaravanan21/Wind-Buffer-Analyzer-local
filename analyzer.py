@@ -14,7 +14,7 @@ def main():
     error_label = None
 
     custom_column_names = {
-            'Column1': 'Timestamp',  # Add more columns as needed
+            'Column1': 'Timestamp',  
             'Column2': 'Converter_UL1',
             'Column3': 'Converter_UL2',
             'Column4': 'Converter_UL3',
@@ -67,7 +67,7 @@ def main():
             'Column50': 'Pitch_error_code_2_3',
             'Column51': 'Pitch_error_code_3_3',  
             'Column52': 'Rated_blade_pos'
-            # Add more columns as needed
+           
         }
 
     def load_data():
@@ -91,7 +91,7 @@ def main():
                     data_lines = content_lines[data_start_line:]
                     df = pd.read_csv(io.StringIO('\n'.join(data_lines)), delimiter=';')
 
-                # Add an extra row with column names (assuming you have 52 columns)
+                # Add an extra row with column names 
                     column_names = [f"Column{i}" for i in range(1, 53)]
                     df.columns = column_names
                     error_label.config(text=f"Data upload successfully")
